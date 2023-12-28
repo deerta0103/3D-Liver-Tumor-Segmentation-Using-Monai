@@ -1,0 +1,186 @@
+2023-12-27 15:31:20,161 INFO    StreamThr :11448 [internal.py:wandb_internal():86] W&B internal server running at pid: 11448, started at: 2023-12-27 15:31:20.160088
+2023-12-27 15:31:20,164 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status
+2023-12-27 15:31:20,167 INFO    WriterThread:11448 [datastore.py:open_for_write():85] open: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/run-bkulezzm.wandb
+2023-12-27 15:31:20,167 DEBUG   SenderThread:11448 [sender.py:send():382] send: header
+2023-12-27 15:31:20,173 DEBUG   SenderThread:11448 [sender.py:send():382] send: run
+2023-12-27 15:31:21,090 INFO    SenderThread:11448 [dir_watcher.py:__init__():211] watching files in: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files
+2023-12-27 15:31:21,091 INFO    SenderThread:11448 [sender.py:_start_run_threads():1136] run started: bkulezzm with start time 1703670380.160558
+2023-12-27 15:31:21,110 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: check_version
+2023-12-27 15:31:21,111 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: check_version
+2023-12-27 15:31:21,580 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: run_start
+2023-12-27 15:31:21,583 DEBUG   HandlerThread:11448 [system_info.py:__init__():32] System info init
+2023-12-27 15:31:21,583 DEBUG   HandlerThread:11448 [system_info.py:__init__():47] System info init done
+2023-12-27 15:31:21,583 INFO    HandlerThread:11448 [system_monitor.py:start():194] Starting system monitor
+2023-12-27 15:31:21,584 INFO    SystemMonitor:11448 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-12-27 15:31:21,585 INFO    HandlerThread:11448 [system_monitor.py:probe():214] Collecting system info
+2023-12-27 15:31:21,588 INFO    SystemMonitor:11448 [interfaces.py:start():190] Started cpu monitoring
+2023-12-27 15:31:21,591 INFO    SystemMonitor:11448 [interfaces.py:start():190] Started disk monitoring
+2023-12-27 15:31:21,593 INFO    SystemMonitor:11448 [interfaces.py:start():190] Started memory monitoring
+2023-12-27 15:31:21,594 INFO    SystemMonitor:11448 [interfaces.py:start():190] Started network monitoring
+2023-12-27 15:31:21,627 DEBUG   HandlerThread:11448 [system_info.py:probe():196] Probing system
+2023-12-27 15:31:21,630 DEBUG   HandlerThread:11448 [system_info.py:_probe_git():181] Probing git
+2023-12-27 15:31:21,638 DEBUG   HandlerThread:11448 [system_info.py:_probe_git():189] Probing git done
+2023-12-27 15:31:21,639 DEBUG   HandlerThread:11448 [system_info.py:probe():244] Probing system done
+2023-12-27 15:31:21,639 DEBUG   HandlerThread:11448 [system_monitor.py:probe():223] {'os': 'Linux-6.2.0-39-generic-x86_64-with-glibc2.35', 'python': '3.10.13', 'heartbeatAt': '2023-12-27T09:46:21.627854', 'startedAt': '2023-12-27T09:46:20.152919', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'git': {'remote': 'https://github.com/Shirshak-Ach/3D-Liver-Tumor-Segmentation.git', 'commit': '6636b0553c74247630cb58699a3b72d344eccd9e'}, 'email': 'shirshak.acharya@gmail.com', 'root': '/home/shirshak/Desktop/3D-Liver-Tumor-Segmentation', 'host': 'shirshak-HP-Pavilion-Laptop-15-cs2xxx', 'username': 'shirshak', 'executable': '/home/shirshak/anaconda3/envs/test_env/bin/python', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 0.79975, 'min': 400.0, 'max': 4600.0}, 'cpu_freq_per_core': [{'current': 0.8, 'min': 400.0, 'max': 4600.0}, {'current': 0.8, 'min': 400.0, 'max': 4600.0}, {'current': 0.799, 'min': 400.0, 'max': 4600.0}, {'current': 2.0, 'min': 400.0, 'max': 4600.0}, {'current': 0.8, 'min': 400.0, 'max': 4600.0}, {'current': 0.8, 'min': 400.0, 'max': 4600.0}, {'current': 0.8, 'min': 400.0, 'max': 4600.0}, {'current': 0.8, 'min': 400.0, 'max': 4600.0}], 'disk': {'/': {'total': 233.56819915771484, 'used': 116.1910629272461}}, 'memory': {'total': 7.636165618896484}}
+2023-12-27 15:31:21,639 INFO    HandlerThread:11448 [system_monitor.py:probe():224] Finished collecting system info
+2023-12-27 15:31:21,639 INFO    HandlerThread:11448 [system_monitor.py:probe():227] Publishing system info
+2023-12-27 15:31:21,639 DEBUG   HandlerThread:11448 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-12-27 15:31:21,639 DEBUG   HandlerThread:11448 [system_info.py:_save_pip():68] Saving pip packages done
+2023-12-27 15:31:21,639 DEBUG   HandlerThread:11448 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-12-27 15:31:22,092 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_created():271] file/dir created: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/conda-environment.yaml
+2023-12-27 15:31:22,093 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_created():271] file/dir created: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/requirements.txt
+2023-12-27 15:31:28,837 DEBUG   HandlerThread:11448 [system_info.py:_save_conda():87] Saving conda packages done
+2023-12-27 15:31:28,838 INFO    HandlerThread:11448 [system_monitor.py:probe():229] Finished publishing system info
+2023-12-27 15:31:28,863 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:31:28,863 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:31:28,864 DEBUG   SenderThread:11448 [sender.py:send():382] send: files
+2023-12-27 15:31:28,864 INFO    SenderThread:11448 [sender.py:_save_file():1392] saving file wandb-metadata.json with policy now
+2023-12-27 15:31:28,870 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:31:28,870 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:31:28,873 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:31:29,092 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/conda-environment.yaml
+2023-12-27 15:31:29,093 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_created():271] file/dir created: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/wandb-metadata.json
+2023-12-27 15:31:29,423 DEBUG   SenderThread:11448 [sender.py:send():382] send: telemetry
+2023-12-27 15:31:30,093 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_created():271] file/dir created: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/output.log
+2023-12-27 15:31:30,226 INFO    wandb-upload_0:11448 [upload_job.py:push():131] Uploaded file /tmp/tmpajd6851swandb/ur1q2epw-wandb-metadata.json
+2023-12-27 15:31:30,624 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:31:32,094 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/output.log
+2023-12-27 15:31:34,095 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/output.log
+2023-12-27 15:31:35,842 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:31:36,095 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/output.log
+2023-12-27 15:31:38,097 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/output.log
+2023-12-27 15:31:40,098 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/output.log
+2023-12-27 15:31:41,331 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:31:42,099 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/output.log
+2023-12-27 15:31:43,872 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:31:43,873 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:31:43,873 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:31:47,265 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:31:52,272 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:31:53,106 INFO    Thread-12 :11448 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231227_153120-bkulezzm/files/config.yaml
+2023-12-27 15:31:57,656 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:31:58,870 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:31:58,870 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:31:58,915 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:32:03,319 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:08,321 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:13,322 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:13,870 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:32:13,870 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:32:13,914 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:32:19,294 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:21,596 DEBUG   SystemMonitor:11448 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-12-27 15:32:21,597 DEBUG   SenderThread:11448 [sender.py:send():382] send: stats
+2023-12-27 15:32:24,598 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:28,871 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:32:28,871 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:32:28,914 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:32:30,271 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:35,272 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:40,273 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:43,873 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:32:43,874 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:32:43,919 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:32:46,269 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:51,270 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:51,598 DEBUG   SenderThread:11448 [sender.py:send():382] send: stats
+2023-12-27 15:32:56,600 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:32:58,871 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:32:58,872 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:32:58,914 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:33:02,256 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:07,258 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:12,259 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:13,874 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:33:13,875 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:33:13,915 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:33:17,276 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:21,600 DEBUG   SenderThread:11448 [sender.py:send():382] send: stats
+2023-12-27 15:33:22,601 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:27,603 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:28,871 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:33:28,872 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:33:28,915 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:33:33,259 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:38,261 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:43,262 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:43,874 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:33:43,875 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:33:43,876 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:33:48,297 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:51,612 DEBUG   SenderThread:11448 [sender.py:send():382] send: stats
+2023-12-27 15:33:53,613 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:58,615 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:33:58,871 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:33:58,872 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:33:58,914 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:34:04,279 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:09,281 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:13,874 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:34:13,875 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:34:13,919 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:34:14,331 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:19,332 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:21,600 DEBUG   SenderThread:11448 [sender.py:send():382] send: stats
+2023-12-27 15:34:24,602 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:28,873 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:34:28,873 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:34:28,914 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:34:30,274 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:35,276 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:40,279 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:43,878 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:34:43,878 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:34:43,881 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:34:45,441 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:50,443 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:51,602 DEBUG   SenderThread:11448 [sender.py:send():382] send: stats
+2023-12-27 15:34:55,604 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:34:58,875 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:34:58,877 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:34:58,914 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:35:01,335 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:35:06,340 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:35:11,401 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:36:51,015 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-27 15:39:45,914 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-27 15:39:47,077 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:40:28,482 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:40:52,021 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:41:16,987 DEBUG   SenderThread:11448 [sender.py:send_request():409] send_request: stop_status
+2023-12-27 15:41:17,094 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,212 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:41:17,269 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,270 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:41:17,270 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,270 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,310 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,344 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,355 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,356 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,366 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,367 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,367 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,367 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,367 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,367 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,367 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,367 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: status_report
+2023-12-27 15:41:17,388 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,388 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,388 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,399 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,407 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:17,475 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:22,535 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-27 15:41:27,896 DEBUG   HandlerThread:11448 [handler.py:handle_request():146] handle_request: keepalive

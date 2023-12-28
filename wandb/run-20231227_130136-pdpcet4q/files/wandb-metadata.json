@@ -1,0 +1,80 @@
+{
+    "os": "Linux-6.2.0-39-generic-x86_64-with-glibc2.35",
+    "python": "3.10.13",
+    "heartbeatAt": "2023-12-27T07:16:37.859797",
+    "startedAt": "2023-12-27T07:16:36.509121",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/Shirshak-Ach/3D-Liver-Tumor-Segmentation.git",
+        "commit": "6636b0553c74247630cb58699a3b72d344eccd9e"
+    },
+    "email": "shirshak.acharya@gmail.com",
+    "root": "/home/shirshak/Desktop/3D-Liver-Tumor-Segmentation",
+    "host": "shirshak-HP-Pavilion-Laptop-15-cs2xxx",
+    "username": "shirshak",
+    "executable": "/home/shirshak/anaconda3/envs/test_env/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2.699625,
+        "min": 400.0,
+        "max": 4600.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2.7,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 2.699,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 2.699,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 2.699,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 2.699,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 2.701,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 2.698,
+            "min": 400.0,
+            "max": 4600.0
+        },
+        {
+            "current": 2.7,
+            "min": 400.0,
+            "max": 4600.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 233.56819915771484,
+            "used": 114.07414627075195
+        }
+    },
+    "memory": {
+        "total": 7.636165618896484
+    }
+}

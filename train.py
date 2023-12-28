@@ -7,6 +7,7 @@ from tqdm import tqdm
 import torch.nn as nn
 from Metrics.calculate_metrics import calculate_metrics
 from operator import add
+import pandas as pd
 
 def training_model(train_dataloader,val_dataloader, dropout, epochs, learning_rate):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -152,11 +153,20 @@ if __name__=='__main__':
     train_dataloader, val_dataloader, image_test, segmentation_test = get_dataloaders(wandb.config["batch_size"], wandb.config["num_classes"])
     
     
-    model, num_epochs,optimizer, loss, overall_train_loss_per_epoch, overall_train_jaccard_per_epoch, overall_train_acc_per_epoch, overall_test_loss_per_epoch, overall_test_jaccard_per_epoch, overall_test_acc_per_epoch = training_model(train_dataloader,val_dataloader,wandb.config["dropout"],wandb.config["epochs"], wandb.config["learning_rate"]) 
+    # model, num_epochs,optimizer, loss, overall_train_loss_per_epoch, overall_train_jaccard_per_epoch, overall_train_acc_per_epoch, overall_test_loss_per_epoch, overall_test_jaccard_per_epoch, overall_test_acc_per_epoch = training_model(train_dataloader,val_dataloader,wandb.config["dropout"],wandb.config["epochs"], wandb.config["learning_rate"]) 
 
-    wandb.watch(model,loss,log="all", log_freq=10)
+    # wandb.watch(model,loss,log="all", log_freq=10)
 
+    columns = ['image', 'segmentation']
+    df = pd.DataFrame(columns=columns)
+
+    for index in tqdm(range(len(image_test))):
+        df.loc[index, 'image'] = image_test[index]
+        df.loc[index, 'segmentation'] = segmentation_test[index]
+    df.to_csv('test_dataset.csv')
     
+
+
 
 
     

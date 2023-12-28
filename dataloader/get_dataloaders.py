@@ -17,8 +17,8 @@ def split_train_and_val_data(dataset):
     return train_ds, val_ds
 
 def get_dataloaders(batch_size, num_classes):
-
     image, image_test, segmentation, segmentation_test = get_data()
+    print(f"Image number {len(image)}")
     check_dataset(image, segmentation)
     dataset = get_train_dataset(image, segmentation, num_classes=num_classes)
     train_ds, val_ds = split_train_and_val_data(dataset)
