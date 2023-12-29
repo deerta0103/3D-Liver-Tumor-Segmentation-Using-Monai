@@ -6,6 +6,7 @@ import monai
 from tqdm import tqdm
 import torch.nn as nn
 import wandb
+import matplotlib.pyplot as plt
 
 
 def testing_model(model, ):
@@ -33,6 +34,33 @@ def testing_model(model, ):
             )
     model.to('cpu')
     file_name_test_after_transform, test_outputs = run_inference(inferer, model, file_names_test,test_transforms)
+    img, seg = file_name_test_after_transform[0]['image'][0], file_name_test_after_transform[0]['seg'][0]
+    test_seg = test_outputs[0].squeeze().squeeze().detach().numpy()
+    test_seg = test_seg.argmax(axis=0)
+
+    nrows = 10
+    fig,ax = plt.subplots(1,nrows, figsize=(50,100))
+    for i,a in enumerate(ax):
+        print(a)
+        total_slices = test_outputs[0].shape[-1]
+        increment = int(total_slices / nrows)
+        a.imshow(test_seg[:,:,i*increment])
+    
+    nrows = 10
+    fig,ax = plt.subplots(1,nrows,figsize=(50,100))
+    for i,a in enumerate(ax):
+        print(a)
+        total_slices = img.detach().numpy().shape[-1]
+        increment = int(total_slices / nrows)
+        a.imshow(img[:,:,i*increment].detach().numpy())
+
+    nrows = 10
+    fig,ax = plt.subplots(1,nrows,figsize=(50,100))
+    for i,a in enumerate(ax):
+        print(a)
+        total_slices = seg.detach().numpy().shape[-1]
+        increment = int(total_slices / nrows)
+        a.imshow(seg[:,:,i*increment].detach().numpy())
 
 
 
@@ -87,7 +115,7 @@ if __name__=='__name__':
         strides=[2, 2],  # strides for mid layers
         dropout = wandb.config["dropout"]
         ).to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+    optimizer = torch.optim.Adam(model.parameters(), lr=wandb.config["learning_rate"])
 
     
        # Load our model 
