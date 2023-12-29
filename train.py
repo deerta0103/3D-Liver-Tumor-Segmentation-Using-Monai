@@ -8,6 +8,7 @@ import torch.nn as nn
 from Metrics.calculate_metrics import calculate_metrics
 from operator import add
 import pandas as pd
+import os
 
 def training_model(train_dataloader,val_dataloader, dropout, epochs, learning_rate):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -24,7 +25,18 @@ def training_model(train_dataloader,val_dataloader, dropout, epochs, learning_ra
     loss_function = DiceLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-    for epoch in range(1,num_epochs+1):
+    
+    checkpoint_path = 'model.pth'
+    start_epoch = 1
+    if os.path.exists(checkpoint_path):
+        checkpoint = torch.load(checkpoint_path)
+        model.load_state_dict(checkpoint['model_state_dict'])
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        start_epoch = checkpoint['epoch'] + 1
+        print(f"Resuming training from epoch {start_epoch}")
+    
+
+    for epoch in range(start_epoch,num_epochs+1):
         overall_train_loss_per_epoch = []
         overall_val_loss_per_epoch = []
         overall_train_jaccard_per_epoch = []
@@ -112,6 +124,12 @@ def training_model(train_dataloader,val_dataloader, dropout, epochs, learning_ra
                 epoch_val_loss = epoch_train_loss/len(val_dataloader)
                 epoch_val_jaccard = metrics_score[0]/len(val_dataloader)
                 epoch_val_acc = metrics_score[1]/len(val_dataloader)
+
+                torch.save({'epoch': epoch,
+                    'model_state_dict': model.state_dict(),
+                    'optimizer_state_dict': optimizer.state_dict()
+                   },checkpoint_path)
+                
                 
                 wandb.log({
                     "val_loss":epoch_val_loss,

@@ -1,0 +1,88 @@
+2023-12-29 15:36:38,944 INFO    StreamThr :11521 [internal.py:wandb_internal():86] W&B internal server running at pid: 11521, started at: 2023-12-29 15:36:38.943853
+2023-12-29 15:36:38,946 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: status
+2023-12-29 15:36:38,950 INFO    WriterThread:11521 [datastore.py:open_for_write():85] open: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231229_153638-oz8495um/run-oz8495um.wandb
+2023-12-29 15:36:38,950 DEBUG   SenderThread:11521 [sender.py:send():382] send: header
+2023-12-29 15:36:38,955 DEBUG   SenderThread:11521 [sender.py:send():382] send: run
+2023-12-29 15:36:42,274 INFO    SenderThread:11521 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f6055ea3c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f6055ea3c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 369, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/requests/sessions.py", line 635, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f6055ea3c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-12-29 15:36:43,958 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:36:48,960 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:36:53,963 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:36:58,966 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:03,968 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:08,971 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:13,974 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:18,978 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:23,981 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:28,984 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:33,987 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:38,990 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:43,993 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:48,995 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:53,998 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:37:59,001 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:38:04,004 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: keepalive
+2023-12-29 15:38:09,007 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: cancel
+2023-12-29 15:38:09,008 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: cancel
+2023-12-29 15:38:09,008 DEBUG   SenderThread:11521 [sender.py:send():391] Record cancelled: run
+2023-12-29 15:38:09,009 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: status_report
+2023-12-29 15:38:09,030 DEBUG   HandlerThread:11521 [handler.py:handle_request():146] handle_request: shutdown
+2023-12-29 15:38:09,030 INFO    HandlerThread:11521 [handler.py:finish():866] shutting down handler
+2023-12-29 15:38:10,009 INFO    SenderThread:11521 [sender.py:finish():1548] shutting down sender
+2023-12-29 15:38:10,010 INFO    WriterThread:11521 [datastore.py:close():294] close: /home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/wandb/run-20231229_153638-oz8495um/run-oz8495um.wandb

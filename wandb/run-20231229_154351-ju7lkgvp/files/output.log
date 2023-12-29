@@ -1,0 +1,27 @@
+
+Image number 83
+
+
+
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████▊                         | 20/25 [00:07<00:02,  2.46it/s]
+X_min value is :164
+X_max value is :216
+Y_min value is :125
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25/25 [00:09<00:00,  2.55it/s]
+Training Epoch 1/20:   0%|                                                                                                                               | 0/83 [00:54<?, ?epoch/s]
+Traceback (most recent call last):
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/multiprocessing/queues.py", line 113, in get
+    if not self._poll(timeout):
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/multiprocessing/connection.py", line 424, in _poll
+    r = wait([self], timeout)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 5225) is killed by signal: Killed.

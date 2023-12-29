@@ -1,0 +1,18 @@
+Image number 0
+X_min value is :nan
+X_max value is :nan
+Y_min value is :nan
+Y_max value is :nan
+0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "/home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/train.py", line 149, in <module>
+    train_dataloader, val_dataloader, image_test, segmentation_test = get_dataloaders(wandb.config["batch_size"], wandb.config["num_classes"])
+  File "/home/shirshak/Desktop/3D-Liver-Tumor-Segmentation/dataloader/get_dataloaders.py", line 17, in get_dataloaders
+    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, num_workers=4,collate_fn=pad_list_data_collate, shuffle=True)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/monai/data/dataloader.py", line 106, in __init__
+    super().__init__(dataset=dataset, num_workers=num_workers, **kwargs)
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 349, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore[arg-type]
+  File "/home/shirshak/anaconda3/envs/test_env/lib/python3.10/site-packages/torch/utils/data/sampler.py", line 140, in __init__
+    raise ValueError(f"num_samples should be a positive integer value, but got num_samples={self.num_samples}")
+ValueError: num_samples should be a positive integer value, but got num_samples=0
