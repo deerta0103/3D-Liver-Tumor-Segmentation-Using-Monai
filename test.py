@@ -1,8 +1,14 @@
 import pandas as pd
 from monai.transforms import (AsDiscreted,RandShiftIntensityd,RandScaleIntensityd,ScaleIntensity,NormalizeIntensityd,Compose,ScaleIntensityd, Spacingd, Transform, EnsureChannelFirstd,AsChannelLast,LoadImaged, RandSpatialCropd, RandGaussianNoised,SpatialPadd,RandSpatialCropd,RandFlipd,EnsureTyped)
 from monai.inferers import AvgMerger,SlidingWindowInferer,SliceInferer, PatchInferer, WSISlidingWindowSplitter, SlidingWindowSplitter
+import torch 
+import monai 
+from tqdm import tqdm
+import torch.nn as nn
+import wandb
 
-def testing_model():
+
+def testing_model(model, ):
     test_transforms = Compose([
             LoadImaged(keys=['image', 'seg'],image_only=False),
             EnsureChannelFirstd(keys=['image', 'seg']),    
@@ -57,6 +63,7 @@ def run_inference(inferer, model, filenames_test, test_transforms):
 
 
 if __name__=='__name__':
+    wandb.login()
     df = pd.read_csv('test_dataset.csv')
     images_list_test = list(df.image)
     segmentation_list_test = list(df.segmentation)
@@ -64,6 +71,30 @@ if __name__=='__name__':
     file_names_test = []
     for i in range(len(images_list_test)):
         file_names_test.append({"image":images_list_test[i], "seg":segmentation_list_test[i]})
+
+    # info = {
+    # 'model_state_dict': model.state_dict(),
+    # 'optimizer_state_dict': optimizer.state_dict(),
+    # 'epoch': 10}
+
+    # torch.save(info, 'model_and_info.pth')
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = model = monai.networks.nets.UNet(
+        spatial_dims=3,  # 2 or 3 for a 2D or 3D network
+        in_channels=1,  # number of input channels
+        out_channels=3,  # number of output channels
+        channels=[8, 16, 32],  # channel counts for layers
+        strides=[2, 2],  # strides for mid layers
+        dropout = wandb.config["dropout"]
+        ).to(device)
+    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
+    
+       # Load our model 
+    loaded_info = torch.load('model_and_info.pth')
+    model.load_state_dict(loaded_info['model_state_dict'])
+    optimizer.load_state_dict(loaded_info['optimizer_state_dict'])
+    epoch = loaded_info['epoch']
 
     
     testing_model()
