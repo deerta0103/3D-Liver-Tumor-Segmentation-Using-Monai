@@ -19,12 +19,10 @@ def training_model(train_dataloader,val_dataloader, dropout, epochs, learning_ra
         channels=[8, 16, 32],  # channel counts for layers
         strides=[2, 2],  # strides for mid layers
         dropout = dropout
-        )
+        ).to(device)
     num_epochs = epochs
     loss_function = DiceLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
-
-
 
     for epoch in range(1,num_epochs+1):
         overall_train_loss_per_epoch = []
@@ -62,13 +60,13 @@ def training_model(train_dataloader,val_dataloader, dropout, epochs, learning_ra
     #         print(outputs.shape)
     #         print(labels.shape)
 
-            train_loss = loss_function(outputs, labels)
+            train_loss = loss_function(out_softmax, labels)
             # train_loss.requires_grad = True
             train_loss.backward()
     #         print(outputs)
     #         print('------------------')
     #         print(labels)
-            score = calculate_metrics(outputs, labels)
+            score = calculate_metrics(out_softmax, labels)
             metrics_score = list(map(add, metrics_score, score))
 
             optimizer.step()
@@ -139,8 +137,6 @@ def training_model(train_dataloader,val_dataloader, dropout, epochs, learning_ra
             f'Val Accuracy: {epoch_val_acc.item():.4f}, ')
 
 
-
-
 if __name__=='__main__':
     wandb.login()
     wandb.init(project="3D-Liver-Segmentation",
@@ -153,9 +149,9 @@ if __name__=='__main__':
     train_dataloader, val_dataloader, image_test, segmentation_test = get_dataloaders(wandb.config["batch_size"], wandb.config["num_classes"])
     
     
-    # model, num_epochs,optimizer, loss, overall_train_loss_per_epoch, overall_train_jaccard_per_epoch, overall_train_acc_per_epoch, overall_test_loss_per_epoch, overall_test_jaccard_per_epoch, overall_test_acc_per_epoch = training_model(train_dataloader,val_dataloader,wandb.config["dropout"],wandb.config["epochs"], wandb.config["learning_rate"]) 
+    model, num_epochs,optimizer, loss, overall_train_loss_per_epoch, overall_train_jaccard_per_epoch, overall_train_acc_per_epoch, overall_test_loss_per_epoch, overall_test_jaccard_per_epoch, overall_test_acc_per_epoch = training_model(train_dataloader,val_dataloader,wandb.config["dropout"],wandb.config["epochs"], wandb.config["learning_rate"]) 
 
-    # wandb.watch(model,loss,log="all", log_freq=10)
+    wandb.watch(model,loss,log="all", log_freq=10)
 
     columns = ['image', 'segmentation']
     df = pd.DataFrame(columns=columns)
