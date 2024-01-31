@@ -22,7 +22,7 @@ def training_model(train_dataloader,val_dataloader, dropout, epochs, learning_ra
         dropout = dropout
         ).to(device)
     num_epochs = epochs
-    loss_function = DiceLoss()
+    loss_function = DiceLoss() # using my own dice loss
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
     
